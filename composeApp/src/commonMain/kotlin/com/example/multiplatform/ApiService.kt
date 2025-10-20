@@ -10,17 +10,17 @@ import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 
 class ApiService {
-    private val client = HttpClient {
-        install(ContentNegotiation) {
-            json(Json { ignoreUnknownKeys = true })
+    private val client =
+        HttpClient {
+            install(ContentNegotiation) {
+                json(Json { ignoreUnknownKeys = true })
+            }
         }
-    }
 
-    internal suspend inline fun <reified T> get(url: String): T {
-        return client.get(url).body()
-    }
+    internal suspend inline fun <reified T> get(url: String): T = client.get(url).body()
 
-    private suspend inline fun <reified Req, reified Res> post(url: String, body: Req): Res {
-        return client.post(url) { setBody(body) }.body()
-    }
+    private suspend inline fun <reified Req, reified Res> post(
+        url: String,
+        body: Req,
+    ): Res = client.post(url) { setBody(body) }.body()
 }
