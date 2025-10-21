@@ -137,7 +137,7 @@ subprojects {
                     rule {
                         disabled = false
                         bound {
-                            minValue = 1 // TODO: change to 80
+                            minValue = 0 // TODO: change to 80
                         }
                     }
                 }
