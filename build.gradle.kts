@@ -1,6 +1,5 @@
 import io.gitlab.arturbosch.detekt.Detekt
 import io.gitlab.arturbosch.detekt.DetektCreateBaselineTask
-import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
 plugins {
     alias(libs.plugins.androidApplication) apply false
@@ -31,7 +30,7 @@ detekt {
     allRules = true // activate all available (even unstable) rules.
     config.setFrom("$projectDir/config/detekt.yml") // point to your custom config defining rules to run, overwriting default behavior
 //    baseline = file("$projectDir/baseline.xml")
-    ignoreFailures = false// a way of suppressing issues before introducing detekt
+    ignoreFailures = false // a way of suppressing issues before introducing detekt
 }
 
 tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
@@ -66,7 +65,7 @@ kover {
             rule {
                 disabled = false
                 bound {
-                    minValue = 1 //TODO: change to 80
+                    minValue = 1 // TODO: change to 80
                 }
             }
         }
@@ -104,15 +103,17 @@ subprojects {
     )
 
     apply(
-        plugin = rootProject.libs.plugins.detekt
-            .get()
-            .pluginId
+        plugin =
+            rootProject.libs.plugins.detekt
+                .get()
+                .pluginId,
     )
 
     apply(
-        plugin = rootProject.libs.plugins.kover
-            .get()
-            .pluginId
+        plugin =
+            rootProject.libs.plugins.kover
+                .get()
+                .pluginId,
     )
 
     configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
@@ -120,8 +121,9 @@ subprojects {
     }
 
     pluginManager.withPlugin(
-        rootProject.libs.plugins.kover.get()
-            .pluginId
+        rootProject.libs.plugins.kover
+            .get()
+            .pluginId,
     ) {
         kover {
             reports {
@@ -134,7 +136,7 @@ subprojects {
                     rule {
                         disabled = false
                         bound {
-                            minValue = 1 //TODO: change to 80
+                            minValue = 1 // TODO: change to 80
                         }
                     }
                 }
