@@ -28,7 +28,8 @@ ktlint {
 detekt {
     buildUponDefaultConfig = true // preconfigure defaults
     allRules = true // activate all available (even unstable) rules.
-    config.setFrom("$projectDir/config/detekt.yml") // point to your custom config defining rules to run, overwriting default behavior
+    // point to your custom config defining rules to run, overwriting default behavior
+    config.setFrom("$projectDir/config/detekt.yml")
 //    baseline = file("$projectDir/baseline.xml")
     ignoreFailures = false // a way of suppressing issues before introducing detekt
 }
