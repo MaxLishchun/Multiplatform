@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  ktlint:
+  koverAll:
     runs-on: ubuntu-latest
 
     steps:
