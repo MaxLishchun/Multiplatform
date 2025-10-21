@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  ktlint:
+  ktlintCheck:
     runs-on: ubuntu-latest
 
     steps:
