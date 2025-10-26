@@ -1,0 +1,24 @@
+PODS:
+  - GoogleMaps (7.1.0):
+    - GoogleMaps/Maps (= 7.1.0)
+  - GoogleMaps/Base (7.1.0)
+  - GoogleMaps/Maps (7.1.0):
+    - GoogleMaps/Base
+  - KeychainSwift (24.0.0)
+
+DEPENDENCIES:
+  - GoogleMaps (~> 7.1.0)
+  - KeychainSwift (~> 24.0.0)
+
+SPEC REPOS:
+  trunk:
+    - GoogleMaps
+    - KeychainSwift
+
+SPEC CHECKSUMS:
+  GoogleMaps: bc56ffb0324e345a2d91bac1a64a920f9c8f1b20
+  KeychainSwift: 007c4647486e4563adca839cf02cef00deb3b670
+
+PODFILE CHECKSUM: a697027898edb5e33c4981ee6d9826856575abb4
+
+COCOAPODS: 1.16.2
