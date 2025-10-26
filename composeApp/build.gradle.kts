@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.composeHotReload)
+    alias(libs.plugins.cocoaposd)
 }
 
 kotlin {
@@ -21,6 +22,19 @@ kotlin {
         iosSimulatorArm64(),
     ).forEach { iosTarget ->
         iosTarget.binaries.framework {
+            baseName = "ComposeApp"
+            isStatic = true
+        }
+    }
+
+    cocoapods {
+        version = "1.0.0"
+        summary = "Kotlin Multiplatform"
+        ios.deploymentTarget = "13.0"
+
+        podfile = project.file("../iosApp/Podfile")
+
+        framework {
             baseName = "ComposeApp"
             isStatic = true
         }

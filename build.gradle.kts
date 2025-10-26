@@ -12,6 +12,7 @@ plugins {
     alias(libs.plugins.ktlint) apply true
     alias(libs.plugins.detekt) apply true
     alias(libs.plugins.kover) apply true
+    alias(libs.plugins.cocoaposd) apply false
 }
 
 ktlint {
